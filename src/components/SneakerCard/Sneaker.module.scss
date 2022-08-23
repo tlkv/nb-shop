@@ -1,0 +1,12 @@
+.catalogPrice {
+  display: flex;
+  align-items: center;
+}
+
+.catalogButton {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: url('../../assets/svg/add_to_cart.svg') center / 100% no-repeat;
+  content: '';
+}

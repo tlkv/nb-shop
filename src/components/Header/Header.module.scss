@@ -1,0 +1,26 @@
+@use '../../sass/variables';
+
+.Header {
+  height: variables.$header-height; // variable export import
+  border-bottom: 1px solid #cfcfcf;
+  position: fixed;
+  width: 100%;
+}
+
+.SiteLogo {
+  width: 89px;
+  height: 32px;
+}
+
+.Navbar {
+  margin: 0 auto;
+  display: flex;
+  max-width: 1640px;
+  width: 100%;
+  justify-content: space-between;
+  padding: 26px 30px 23px 30px;
+}
+
+.HeaderItem {
+  display: block;
+}
