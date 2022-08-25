@@ -1,0 +1,7 @@
+@use '../../styles/variables';
+
+.cart {
+  width: 410px;
+  border-left: 1px solid #cfcfcf;
+  min-height: calc(100vh - variables.$header-height);
+}

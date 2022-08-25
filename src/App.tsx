@@ -1,18 +1,22 @@
 import React from 'react';
-import './sass/normalize.scss';
+import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
-import s from './sass/App.module.scss';
-import SneakerList from './components/SneakerCardList/SneakerCardList';
-import Cart from './components/Cart/Cart';
+import SneakerCatalog from './components/SneakerCatalog/SneakerCatalog';
+import Basket from './components/Basket/Basket';
+import SneakerDetails from './components/SneakerDetails/SneakerDetails';
+import s from './styles/App.module.scss';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <main className={s.MainContainer}>
-        <SneakerList />
-        <Cart />
-      </main>
+      <div className={s.mainContainer}>
+        <Routes>
+          <Route path="/sneakers/:model" element={<SneakerDetails />} />
+          <Route path="*" element={<SneakerCatalog />} />
+        </Routes>
+        <Basket />
+      </div>
     </div>
   );
 }

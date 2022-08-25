@@ -1,4 +1,3 @@
-import * as uuid from 'uuid';
 import { SneakerData } from './types';
 
 const sneakersMock: SneakerData[] = [
@@ -8,7 +7,6 @@ const sneakersMock: SneakerData[] = [
     imageUrlSmall: './assets/img/sn1small.jpg',
     imageUrlBig: './assets/img/sn1big.jpg',
     model: 'MT91547',
-    id: uuid.v4(),
   },
   {
     title: 'New Balance Made in UK 920 Chinese New Year',
@@ -16,7 +14,6 @@ const sneakersMock: SneakerData[] = [
     imageUrlSmall: './assets/img/sn2small.jpg',
     imageUrlBig: './assets/img/sn2big.jpg',
     model: 'MT91541',
-    id: uuid.v4(),
   },
   {
     title: 'New Balance 373 Modern Classics',
@@ -24,7 +21,6 @@ const sneakersMock: SneakerData[] = [
     imageUrlSmall: './assets/img/sn3small.jpg',
     imageUrlBig: './assets/img/sn3big.jpg',
     model: 'MT91542',
-    id: uuid.v4(),
   },
   {
     title: 'New Balance Made in UK 670 Chinese New Year',
@@ -32,7 +28,6 @@ const sneakersMock: SneakerData[] = [
     imageUrlSmall: './assets/img/sn4small.jpg',
     imageUrlBig: './assets/img/sn4big.jpg',
     model: 'MT91543',
-    id: uuid.v4(),
   },
   {
     title: 'New Balance X-Racer Utility',
@@ -40,7 +35,6 @@ const sneakersMock: SneakerData[] = [
     imageUrlSmall: './assets/img/sn5small.jpg',
     imageUrlBig: './assets/img/sn5big.jpg',
     model: 'MT91544',
-    id: uuid.v4(),
   },
   {
     title: 'New Balance 5740 Think Colorfully',
@@ -48,7 +42,6 @@ const sneakersMock: SneakerData[] = [
     imageUrlSmall: './assets/img/sn6small.jpg',
     imageUrlBig: './assets/img/sn6big.jpg',
     model: 'MT91545',
-    id: uuid.v4(),
   },
 ];
 

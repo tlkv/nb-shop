@@ -1,0 +1,46 @@
+.sneakerDetails {
+  margin: 60px 170px 0 170px;
+  width: 100%;
+  max-width: 890px;
+
+  .backToMain {
+    background-color: #3366ff;
+    height: 40px;
+    width: 156px;
+    color: #fff;
+  }
+
+  .sneakerDetailsTitle {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    margin: 20px 0 5px 0;
+  }
+
+  .sneakerImgWrapper {
+    max-width: 890px;
+    min-height: 512px;
+    border: 1px solid #d5d5d5;
+    margin-top: 20px;
+    .sneakerImgBig {
+      max-width: 100%;
+    }
+  }
+
+  .sneakerPrice {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+
+    .sneakerButton {
+      width: 40px;
+      height: 40px;
+      background: url('../../assets/svg/add_to_cart.svg') center / 100% no-repeat;
+    }
+
+    .sneakerSign {
+      margin: 0 5px 0 15px;
+      font-size: 24px;
+    }
+  }
+}

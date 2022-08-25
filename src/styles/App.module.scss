@@ -1,8 +1,8 @@
 @use './variables';
 
-.MainContainer {
+.mainContainer {
   padding-top: variables.$header-height;
-  min-height: 100vh;
   margin: 0 auto;
   max-width: 1640px;
+  display: flex;
 }

@@ -1,0 +1,14 @@
+.cartTotal {
+  border-top: 1px solid #cfcfcf;
+  padding: 40px;
+
+  .cartTotalItem {
+    display: flex;
+    justify-content: space-between;
+    line-height: 34px;
+  }
+
+  .cartTotalPrice * {
+    font-size: 18px;
+  }
+}

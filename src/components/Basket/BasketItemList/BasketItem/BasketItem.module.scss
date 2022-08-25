@@ -1,0 +1,31 @@
+.basketItem {
+  display: flex;
+  justify-content: space-between;
+
+  .basketImgWrapper {
+    max-width: 100px;
+    max-height: 100px;
+    img {
+      width: 100%;
+    }
+  }
+
+  .cartCount {
+    width: 20px;
+    height: 20px;
+  }
+
+  .removeOne {
+    background: url('../../../../assets/svg/minus.svg') center / 100% no-repeat;
+  }
+
+  .addOne {
+    background: url('../../../../assets/svg/plus.svg') center / 100% no-repeat;
+  }
+
+  .removeFromBasket {
+    width: 18px;
+    height: 18px;
+    background: url('../../../../assets/svg/cross-gr.svg') center / 100% no-repeat;
+  }
+}

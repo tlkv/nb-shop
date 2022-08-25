@@ -4,5 +4,15 @@ export interface SneakerData {
   imageUrlSmall?: string;
   imageUrlBig?: string;
   model?: string;
-  id?: string;
+}
+
+export interface SneakerBasketData extends SneakerData {
+  amount: number;
+}
+
+export interface BasketState {
+  items: SneakerBasketData[];
+  count: number;
+  subTotal: number;
+  total: number;
 }
