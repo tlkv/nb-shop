@@ -4,7 +4,13 @@ import Header from './components/Header/Header';
 import SneakerCatalog from './components/SneakerCatalog/SneakerCatalog';
 import Basket from './components/Basket/Basket';
 import SneakerDetails from './components/SneakerDetails/SneakerDetails';
+import store from './store/store';
 import s from './styles/App.module.scss';
+import { LS_KEY } from './data/constants';
+
+store.subscribe(() => {
+  localStorage.setItem(LS_KEY, JSON.stringify(store.getState()));
+});
 
 function App() {
   return (

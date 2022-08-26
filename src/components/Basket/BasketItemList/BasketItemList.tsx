@@ -6,10 +6,10 @@ import s from './BasketItemList.module.scss';
 function BasketItemList() {
   const cart = useAppSelector(selectBasket);
   return (
-    <div className={s.cartListContainer}>
-      <h2 className={s.cartTitle}>My basket</h2>
-      <div>
-        {cart.items.length === 0 && <p>Your Basket is Empty</p>}
+    <div className={s.basketListContainer}>
+      <h2 className={s.basketTitle}>My basket</h2>
+      {cart.items.length === 0 && <div className={s.emptyBasket}>Your Basket is Empty</div>}
+      <div className={s.basketItemsWrapper}>
         {cart.items.map((i) => (
           <BasketItem
             title={i.title}

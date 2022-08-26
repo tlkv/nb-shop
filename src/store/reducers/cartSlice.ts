@@ -1,25 +1,23 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { SHIPPING_PRICE, TAX_PRICE } from '../../data/constants';
-import { BasketState, SneakerData } from '../../data/types';
+import { DEF_STATE } from '../../data/constants';
+import { BasketState, BasketStore, SneakerData } from '../../data/types';
 import { RootState } from '../store';
 
-const initialState: BasketState = {
-  items: [],
-  count: 0,
-  subTotal: 0,
-  total: TAX_PRICE + SHIPPING_PRICE,
-};
+const initialState: BasketState = DEF_STATE;
 
 export const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
+    hydrate: (state, action: PayloadAction<BasketStore>) => {
+      return action.payload.cart;
+    },
     addToBasket: (state, action: PayloadAction<SneakerData>) => {
       const ind = state.items.findIndex((i) => i.model === action.payload.model);
       if (ind !== -1) {
         state.items[ind].amount += 1;
       } else {
-        state.items.push({ ...action.payload, amount: 1 });
+        state.items.unshift({ ...action.payload, amount: 1 });
       }
       state.count += 1;
       state.subTotal += action.payload.price;
@@ -52,7 +50,8 @@ export const cartSlice = createSlice({
   },
 });
 
-export const { addToBasket, removeFromBasket, removeSneakersTypeFromBasket } = cartSlice.actions;
+export const { addToBasket, removeFromBasket, removeSneakersTypeFromBasket, hydrate } =
+  cartSlice.actions;
 
 export const selectBasket = (state: RootState) => state.cart;
 

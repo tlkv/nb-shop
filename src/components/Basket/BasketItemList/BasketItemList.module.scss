@@ -1,7 +1,21 @@
-.cartListContainer {
+.basketListContainer {
   padding: 40px;
-  .cartTitle {
+  .basketTitle {
     font-size: 18px;
     font-weight: bold;
+    margin: 0 auto 30px;
+  }
+
+  .basketItemsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .emptyBasket {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

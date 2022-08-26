@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { SneakerBasketData } from '../../../../data/types';
 import { useAppDispatch } from '../../../../store/hooks';
 import {
@@ -19,44 +20,38 @@ function BasketItem({ title, imageUrlSmall, price, amount, model }: SneakerBaske
 
   return (
     <div className={s.basketItem}>
-      <div className={s.basketImgWrapper}>
-        <img src={imageUrlSmall} alt="cart preview" />
-      </div>
-      <div>
-        <div>{title}</div>
-        <div>
+      <Link to={`/sneakers/${model}`} className={s.basketImgWrapper}>
+        <img src={imageUrlSmall} alt="basket item preview" />
+      </Link>
+      <div className={s.basketContWrapper}>
+        <Link to={`/sneakers/${model}`} className={s.basketItemTitle}>
+          {title}
+        </Link>
+        <div className={s.basketContButtons}>
           <button
             type="button"
             aria-label="Remove"
             className={`${s.cartCount} ${s.removeOne}`}
             onClick={removeSneakers}
           />
-          {amount}
+          <span className={s.basketContAmount}>{amount}</span>
           <button
             type="button"
             aria-label="Remove"
             className={`${s.cartCount} ${s.addOne}`}
             onClick={addSneakers}
           />
-          ${price.toLocaleString()}
+          <span className={s.basketContPrice}>$ {(price * amount).toLocaleString('ru')}</span>
         </div>
       </div>
-      <div>
-        <button
-          type="button"
-          aria-label="Remove"
-          className={s.removeFromBasket}
-          onClick={removeSnTypeFromBasket}
-        />
-      </div>
+      <button
+        type="button"
+        aria-label="Remove"
+        className={s.removeFromBasket}
+        onClick={removeSnTypeFromBasket}
+      />
     </div>
   );
 }
-
-/* <div>
-      {title}, <br />
-      price: {price}, <br />
-      amount: {amount}
-    </div> */
 
 export default BasketItem;

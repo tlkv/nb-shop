@@ -1,10 +1,14 @@
 .basketItem {
   display: flex;
   justify-content: space-between;
+  height: 100px;
+  max-width: 330px;
 
   .basketImgWrapper {
     max-width: 100px;
     max-height: 100px;
+    display: flex;
+    align-items: center;
     img {
       width: 100%;
     }
@@ -27,5 +31,37 @@
     width: 18px;
     height: 18px;
     background: url('../../../../assets/svg/cross-gr.svg') center / 100% no-repeat;
+  }
+
+  .basketContWrapper {
+    width: 205px;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .basketContButtons {
+    width: 170px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .basketItemTitle {
+    height: 2.4em;
+    text-decoration: none;
+    color: #000;
+    overflow: hidden;
+  }
+
+  .basketContAmount {
+    text-align: center;
+    width: 20px;
+    overflow: hidden;
+  }
+
+  .basketContPrice {
+    width: 60px;
+    overflow: hidden;
   }
 }

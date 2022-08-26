@@ -16,3 +16,7 @@ export interface BasketState {
   subTotal: number;
   total: number;
 }
+
+export interface BasketStore {
+  cart: BasketState;
+}

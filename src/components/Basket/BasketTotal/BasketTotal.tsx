@@ -10,7 +10,7 @@ function BasketTotal() {
     <div className={s.cartTotal}>
       <div className={s.cartTotalItem}>
         <div>Subtotal</div>
-        <div>${cart.subTotal.toLocaleString('ru')}</div>
+        <div>${cart?.subTotal?.toLocaleString('ru')}</div>
       </div>
       <div className={s.cartTotalItem}>
         <div>Tax</div>
@@ -25,21 +25,11 @@ function BasketTotal() {
           <strong>Total</strong>
         </div>
         <div>
-          <strong>${cart.total.toLocaleString('ru')}</strong>
+          <strong>${cart?.total?.toLocaleString('ru')}</strong>
         </div>
       </div>
     </div>
   );
 }
-
-/* Subtotal
-Tax
-Shipping
-Total
-
-$1 050
-$100
-$150
-$1 300 */
 
 export default BasketTotal;

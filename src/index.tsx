@@ -6,6 +6,14 @@ import App from './App';
 import store from './store/store';
 import './styles/index.scss';
 import './styles/normalize.scss';
+import { hydrate } from './store/reducers/cartSlice';
+import { BasketStore } from './data/types';
+import getLocalStorage from './utils/getLocalStorage';
+
+const currentStore: BasketStore = getLocalStorage();
+if (currentStore) {
+  store.dispatch(hydrate(currentStore));
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(

@@ -28,7 +28,7 @@ function SneakerDetails() {
   return (
     <section className={s.sneakerDetails}>
       {!currentData ? (
-        <p>Not Found</p>
+        <div className={s.notFound}>Not Found</div>
       ) : (
         <>
           <button
@@ -43,7 +43,7 @@ function SneakerDetails() {
             <img src={currentData?.imageUrlBig} alt="sneaker" className={s.sneakerImgBig} />
           </div>
           <h3 className={s.sneakerDetailsTitle}>{currentData?.title}</h3>
-          <p>Item model number: {currentData?.model}</p>
+          <span>Item model number: {currentData?.model}</span>
           <div className={s.sneakerPrice}>
             <button
               type="button"
