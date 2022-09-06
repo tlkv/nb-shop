@@ -1,35 +1,24 @@
 import { SHIPPING_PRICE, TAX_PRICE } from '../../../data/constants';
 import { useAppSelector } from '../../../store/hooks';
-import { selectBasket } from '../../../store/reducers/cartSlice';
+import { selectBasket } from '../../../store/reducers/basketSlice';
 import s from './BasketTotal.module.scss';
+import BasketTotalItem from './BasketTotalItem/BasketTotalItem';
 
-function BasketTotal() {
-  const cart = useAppSelector(selectBasket);
+const BasketTotal = () => {
+  const basket = useAppSelector(selectBasket);
 
   return (
-    <div className={s.cartTotal}>
-      <div className={s.cartTotalItem}>
-        <div>Subtotal</div>
-        <div>${cart?.subTotal?.toLocaleString('ru')}</div>
-      </div>
-      <div className={s.cartTotalItem}>
-        <div>Tax</div>
-        <div>${TAX_PRICE.toLocaleString('ru')}</div>
-      </div>
-      <div className={s.cartTotalItem}>
-        <div>Shipping</div>
-        <div>${SHIPPING_PRICE.toLocaleString('ru')}</div>
-      </div>
-      <div className={`${s.cartTotalItem} ${s.cartTotalPrice}`}>
-        <div>
-          <strong>Total</strong>
-        </div>
-        <div>
-          <strong>${cart?.total?.toLocaleString('ru')}</strong>
-        </div>
-      </div>
+    <div className={s.basketTotal}>
+      <BasketTotalItem title="Subtotal" value={basket?.subTotal} cNames={[s.basketTotalItem]} />
+      <BasketTotalItem title="Tax" value={TAX_PRICE} cNames={[s.basketTotalItem]} />
+      <BasketTotalItem title="Shipping" value={SHIPPING_PRICE} cNames={[s.basketTotalItem]} />
+      <BasketTotalItem
+        title="Total"
+        value={basket?.total}
+        cNames={[s.basketTotalItem, s.basketTotalPrice]}
+      />
     </div>
   );
-}
+};
 
 export default BasketTotal;

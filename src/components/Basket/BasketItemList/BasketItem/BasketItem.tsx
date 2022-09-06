@@ -1,57 +1,44 @@
 import { Link } from 'react-router-dom';
-import { SneakerBasketData } from '../../../../data/types';
-import { useAppDispatch } from '../../../../store/hooks';
+import Button from 'components/Button/Button';
+import { ProductBasketData } from 'data/types';
+import { useAppDispatch } from 'store/hooks';
 import {
   addToBasket,
+  hideBasket,
   removeFromBasket,
-  removeSneakersTypeFromBasket,
-} from '../../../../store/reducers/cartSlice';
+  removeProductsTypeFromBasket,
+} from '../../../../store/reducers/basketSlice';
+
 import s from './BasketItem.module.scss';
 
-function BasketItem({ title, imageUrlSmall, price, amount, model }: SneakerBasketData) {
+const BasketItem = ({ title, imageUrlSmall, price, amount, model }: ProductBasketData) => {
   const dispatch = useAppDispatch();
 
-  const addSneakers = () => dispatch(addToBasket({ imageUrlSmall, title, price, model }));
-
-  const removeSneakers = () => dispatch(removeFromBasket({ imageUrlSmall, title, price, model }));
-
-  const removeSnTypeFromBasket = () =>
-    dispatch(removeSneakersTypeFromBasket({ imageUrlSmall, title, price, model }));
+  const basketHide = () => dispatch(hideBasket());
+  const addProducts = () => dispatch(addToBasket({ imageUrlSmall, title, price, model }));
+  const removeProducts = () => dispatch(removeFromBasket({ imageUrlSmall, title, price, model }));
+  const removeBasketEntity = () =>
+    dispatch(removeProductsTypeFromBasket({ imageUrlSmall, title, price, model }));
 
   return (
     <div className={s.basketItem}>
-      <Link to={`/sneakers/${model}`} className={s.basketImgWrapper}>
+      <Link to={`/catalog/${model}`} className={s.basketImgWrapper} onClick={basketHide}>
         <img src={imageUrlSmall} alt="basket item preview" />
       </Link>
       <div className={s.basketContWrapper}>
-        <Link to={`/sneakers/${model}`} className={s.basketItemTitle}>
+        <Link to={`/catalog/${model}`} className={s.basketItemTitle} onClick={basketHide}>
           {title}
         </Link>
         <div className={s.basketContButtons}>
-          <button
-            type="button"
-            aria-label="Remove"
-            className={`${s.cartCount} ${s.removeOne}`}
-            onClick={removeSneakers}
-          />
+          <Button label="Remove" cNames={[s.basketCount, s.removeOne]} callback={removeProducts} />
           <span className={s.basketContAmount}>{amount}</span>
-          <button
-            type="button"
-            aria-label="Remove"
-            className={`${s.cartCount} ${s.addOne}`}
-            onClick={addSneakers}
-          />
+          <Button label="Add" cNames={[s.basketCount, s.addOne]} callback={addProducts} />
           <span className={s.basketContPrice}>$ {(price * amount).toLocaleString('ru')}</span>
         </div>
       </div>
-      <button
-        type="button"
-        aria-label="Remove"
-        className={s.removeFromBasket}
-        onClick={removeSnTypeFromBasket}
-      />
+      <Button label="Remove all" cNames={[s.removeFromBasket]} callback={removeBasketEntity} />
     </div>
   );
-}
+};
 
 export default BasketItem;

@@ -1,5 +1,16 @@
+@use '../../../styles/variables.scss';
+@use '../../../styles/mixins.scss';
+
 .basketListContainer {
   padding: 40px;
+  max-width: 500px;
+  min-width: 409px;
+  margin: auto;
+
+  @media (max-width: variables.$tablet) {
+    min-width: unset;
+  }
+
   .basketTitle {
     font-size: 18px;
     font-weight: bold;
@@ -17,5 +28,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .basketCrossBtn {
+    height: 22px;
+    width: 22px;
+    top: -10px;
+    right: -10px;
+    position: relative;
+    @include mixins.backgr('../../../assets/svg/bigcross.svg');
+    display: block;
+    margin: auto 0 18px auto;
+    display: none;
+    @media (max-width: variables.$tablet) {
+      display: block;
+    }
   }
 }

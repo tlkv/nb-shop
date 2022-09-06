@@ -1,6 +1,6 @@
-import { SneakerData } from './types';
+import { ProductData } from './types';
 
-const sneakersMock: SneakerData[] = [
+const productsMock: ProductData[] = [
   {
     title: 'New Balance 574 Vintage Brights',
     price: 650,
@@ -45,4 +45,4 @@ const sneakersMock: SneakerData[] = [
   },
 ];
 
-export default sneakersMock;
+export default productsMock;

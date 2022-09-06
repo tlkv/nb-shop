@@ -1,14 +1,17 @@
-.cartTotal {
+.basketTotal {
   border-top: 1px solid #cfcfcf;
   padding: 40px 55px 40px 40px;
+  max-width: 500px;
+  margin: auto;
 
-  .cartTotalItem {
+  .basketTotalItem {
     display: flex;
     justify-content: space-between;
     line-height: 34px;
   }
 
-  .cartTotalPrice * {
+  .basketTotalPrice * {
     font-size: 18px;
+    font-weight: bold;
   }
 }

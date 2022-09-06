@@ -1,12 +1,15 @@
+@use '../../../../styles/mixins.scss';
+
 .basketItem {
   display: flex;
   justify-content: space-between;
   height: 100px;
-  max-width: 330px;
 
   .basketImgWrapper {
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 90px;
+    max-height: 90px;
+    min-width: 60px;
+    min-height: 60px;
     display: flex;
     align-items: center;
     img {
@@ -14,27 +17,28 @@
     }
   }
 
-  .cartCount {
+  .basketCount {
     width: 20px;
     height: 20px;
   }
 
   .removeOne {
-    background: url('../../../../assets/svg/minus.svg') center / 100% no-repeat;
+    @include mixins.backgr('../../../../assets/svg/minus.svg');
   }
 
   .addOne {
-    background: url('../../../../assets/svg/plus.svg') center / 100% no-repeat;
+    @include mixins.backgr('../../../../assets/svg/plus.svg');
   }
 
   .removeFromBasket {
     width: 18px;
     height: 18px;
-    background: url('../../../../assets/svg/cross-gr.svg') center / 100% no-repeat;
+    @include mixins.backgr('../../../../assets/svg/cross-gr.svg');
   }
 
   .basketContWrapper {
-    width: 205px;
+    width: 200px;
+    margin-left: 15px;
     gap: 15px;
     display: flex;
     flex-direction: column;

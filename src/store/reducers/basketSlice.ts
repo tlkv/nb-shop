@@ -1,18 +1,21 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { DEF_STATE } from '../../data/constants';
-import { BasketState, BasketStore, SneakerData } from '../../data/types';
+import { SHIPPING_PRICE, TAX_PRICE } from '../../data/constants';
+import { BasketState, ProductData } from '../../data/types';
 import { RootState } from '../store';
 
-const initialState: BasketState = DEF_STATE;
+const initialState: BasketState = {
+  items: [],
+  count: 0,
+  subTotal: 0,
+  total: TAX_PRICE + SHIPPING_PRICE,
+  showBasket: false,
+};
 
-export const cartSlice = createSlice({
-  name: 'cart',
+export const basketSlice = createSlice({
+  name: 'basket',
   initialState,
   reducers: {
-    hydrate: (state, action: PayloadAction<BasketStore>) => {
-      return action.payload.cart;
-    },
-    addToBasket: (state, action: PayloadAction<SneakerData>) => {
+    addToBasket: (state, action: PayloadAction<ProductData>) => {
       const ind = state.items.findIndex((i) => i.model === action.payload.model);
       if (ind !== -1) {
         state.items[ind].amount += 1;
@@ -23,7 +26,7 @@ export const cartSlice = createSlice({
       state.subTotal += action.payload.price;
       state.total += action.payload.price;
     },
-    removeFromBasket: (state, action: PayloadAction<SneakerData>) => {
+    removeFromBasket: (state, action: PayloadAction<ProductData>) => {
       const ind = state.items.findIndex((i) => i.model === action.payload.model);
 
       if (ind !== -1) {
@@ -37,7 +40,7 @@ export const cartSlice = createSlice({
         state.total -= action.payload.price;
       }
     },
-    removeSneakersTypeFromBasket: (state, action: PayloadAction<SneakerData>) => {
+    removeProductsTypeFromBasket: (state, action: PayloadAction<ProductData>) => {
       const ind = state.items.findIndex((i) => i.model === action.payload.model);
 
       if (ind !== -1) {
@@ -47,12 +50,24 @@ export const cartSlice = createSlice({
         state.items.splice(ind, 1);
       }
     },
+    toggleBasket: (state) => {
+      state.showBasket = !state.showBasket;
+    },
+
+    hideBasket: (state) => {
+      state.showBasket = false;
+    },
   },
 });
 
-export const { addToBasket, removeFromBasket, removeSneakersTypeFromBasket, hydrate } =
-  cartSlice.actions;
+export const {
+  addToBasket,
+  removeFromBasket,
+  removeProductsTypeFromBasket,
+  toggleBasket,
+  hideBasket,
+} = basketSlice.actions;
 
-export const selectBasket = (state: RootState) => state.cart;
+export const selectBasket = (state: RootState) => state.basket;
 
-export default cartSlice.reducer;
+export default basketSlice.reducer;

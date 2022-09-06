@@ -1,0 +1,18 @@
+@use '../../styles/variables.scss';
+
+.CatalogPage {
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  gap: 50px 70px;
+  width: fit-content;
+  margin: 60px auto auto;
+  padding-bottom: 30px;
+
+  @media (max-width: variables.$hd) {
+    grid-template-columns: repeat(2, 250px);
+  }
+
+  @media (max-width: variables.$mobile) {
+    grid-template-columns: none;
+  }
+}

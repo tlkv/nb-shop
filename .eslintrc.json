@@ -34,7 +34,14 @@
     "@typescript-eslint/no-var-requires": "off",
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
-    /*disable conflicting airbnb rules - not in task requirements*/
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    /* disable conflicting airbnb rules */
     "react/jsx-filename-extension": "off",
     "import/extensions": "off",
     "import/no-unresolved": "off"

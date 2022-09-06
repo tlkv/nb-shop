@@ -1,28 +1,34 @@
-import { useAppSelector } from '../../../store/hooks';
-import { selectBasket } from '../../../store/reducers/cartSlice';
+import Button from 'components/Button/Button';
+import { useAppDispatch, useAppSelector } from '../../../store/hooks';
+import { hideBasket, selectBasket } from '../../../store/reducers/basketSlice';
 import BasketItem from './BasketItem/BasketItem';
 import s from './BasketItemList.module.scss';
 
-function BasketItemList() {
-  const cart = useAppSelector(selectBasket);
+const BasketItemList = () => {
+  const basket = useAppSelector(selectBasket);
+  const dispatch = useAppDispatch();
+
+  const basketHide = () => dispatch(hideBasket());
+
   return (
     <div className={s.basketListContainer}>
+      <Button label="Hide basket" callback={basketHide} cNames={[s.basketCrossBtn]} />
       <h2 className={s.basketTitle}>My basket</h2>
-      {cart.items.length === 0 && <div className={s.emptyBasket}>Your Basket is Empty</div>}
+      {basket.items.length === 0 && <div className={s.emptyBasket}>Your Basket is Empty</div>}
       <div className={s.basketItemsWrapper}>
-        {cart.items.map((i) => (
+        {basket.items.map((i) => (
           <BasketItem
             title={i.title}
             price={i.price}
             amount={i.amount}
             imageUrlSmall={i.imageUrlSmall}
             model={i.model}
-            key={`cart_${i.model}`}
+            key={`basket_${i.model}`}
           />
         ))}
       </div>
     </div>
   );
-}
+};
 
 export default BasketItemList;

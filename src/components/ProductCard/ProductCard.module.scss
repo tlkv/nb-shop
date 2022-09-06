@@ -1,10 +1,13 @@
-.sneakerCard {
+@use '../../styles/variables.scss';
+@use '../../styles/mixins.scss';
+
+.productCard {
   width: 250px;
   height: 300px;
-  border: 1px solid #e7e7e7;
+  border: 1px solid variables.$gray-custom;
   padding: 15px;
 
-  .sneakerCardTitle {
+  .productCardTitle {
     max-width: 180px;
     margin-top: 35px;
     height: 2.4em;
@@ -15,28 +18,27 @@
     margin-bottom: 10px;
   }
 
-  .sneakerImageWrapper {
+  .productImageWrapper {
     display: block;
 
-    .sneakerCardImage {
+    .productCardImage {
       max-width: 228px;
       max-height: 130px;
       margin-top: 15px;
     }
   }
 
-  .sneakerCardPrice {
+  .productCardPrice {
     display: flex;
     align-items: center;
 
-    .sneakerCardSign {
+    .productCardSign {
       margin: 0 5px 0 15px;
     }
 
-    .sneakerCardButton {
-      width: 40px;
-      height: 40px;
-      background: url('../../../assets/svg/add_to_cart.svg') center / 100% no-repeat;
+    .productCardButton {
+      @include mixins.button;
+      @include mixins.backgr('../../assets/svg/add_to_basket.svg');
     }
   }
 }
