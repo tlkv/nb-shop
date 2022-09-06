@@ -39,6 +39,7 @@
     .productCardButton {
       @include mixins.button;
       @include mixins.backgr('../../assets/svg/add_to_basket.svg');
+      @include mixins.shadow;
     }
   }
 }

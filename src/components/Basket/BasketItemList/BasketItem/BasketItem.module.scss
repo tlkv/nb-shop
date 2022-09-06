@@ -33,7 +33,11 @@
   .removeFromBasket {
     width: 18px;
     height: 18px;
+    transition: rotate 0.4;
     @include mixins.backgr('../../../../assets/svg/cross-gr.svg');
+    &:hover {
+      transform: rotate(90deg);
+    }
   }
 
   .basketContWrapper {
