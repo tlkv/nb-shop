@@ -18,7 +18,7 @@
   }
 
   .basketCount {
-    width: 20px;
+    width: 21px;
     height: 20px;
   }
 
@@ -31,7 +31,7 @@
   }
 
   .removeFromBasket {
-    width: 18px;
+    width: 19px;
     height: 18px;
     transition: rotate 0.4;
     @include mixins.backgr('../../../../assets/svg/cross-gr.svg');
