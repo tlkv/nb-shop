@@ -4,6 +4,9 @@
   display: flex;
   justify-content: space-between;
   height: 100px;
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
 
   .basketImgWrapper {
     max-width: 90px;
@@ -12,27 +15,28 @@
     min-height: 60px;
     display: flex;
     align-items: center;
+    align-self: center;
     img {
       width: 100%;
     }
   }
 
   .basketCount {
-    width: 21px;
-    height: 20px;
+    width: 23px;
+    height: 22px;
   }
 
   .removeOne {
-    @include mixins.backgrfix('../../../../assets/svg/minus.svg');
+    @include mixins.backgr('../../../../assets/svg/minus.svg');
   }
 
   .addOne {
-    @include mixins.backgrfix('../../../../assets/svg/plus.svg');
+    @include mixins.backgr('../../../../assets/svg/plus.svg');
   }
 
   .removeFromBasket {
-    width: 19px;
-    height: 18px;
+    width: 21px;
+    height: 19px;
     transition: rotate 0.4;
     @include mixins.backgr('../../../../assets/svg/cross-gr.svg');
     &:hover {
@@ -43,7 +47,6 @@
   .basketContWrapper {
     width: 200px;
     margin-left: 15px;
-    gap: 15px;
     display: flex;
     flex-direction: column;
   }
@@ -60,6 +63,7 @@
     text-decoration: none;
     color: #000;
     overflow: hidden;
+    margin-bottom: 15px;
   }
 
   .basketContAmount {
