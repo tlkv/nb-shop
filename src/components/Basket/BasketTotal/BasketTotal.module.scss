@@ -1,3 +1,5 @@
+@use '../../../styles/variables.scss';
+
 .basketTotal {
   border-top: 1px solid #cfcfcf;
   padding: 40px 55px 40px 40px;
@@ -13,5 +15,9 @@
   .basketTotalPrice * {
     font-size: 18px;
     font-weight: bold;
+
+    @media (max-width: variables.$tablet) {
+      margin-bottom: 50px;
+    }
   }
 }
