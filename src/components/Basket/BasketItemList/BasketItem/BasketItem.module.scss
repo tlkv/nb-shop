@@ -23,11 +23,11 @@
   }
 
   .removeOne {
-    @include mixins.backgr('../../../../assets/svg/minus.svg');
+    @include mixins.backgrfix('../../../../assets/svg/minus.svg');
   }
 
   .addOne {
-    @include mixins.backgr('../../../../assets/svg/plus.svg');
+    @include mixins.backgrfix('../../../../assets/svg/plus.svg');
   }
 
   .removeFromBasket {

@@ -1,5 +1,9 @@
 @mixin backgr($url) {
-  background: url($url) center / cover no-repeat;
+  background: url($url) center / 100% no-repeat;
+}
+
+@mixin backgrfix($url) {
+  background: url($url) center / 95% no-repeat;
 }
 
 @mixin button() {
