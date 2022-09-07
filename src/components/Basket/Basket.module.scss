@@ -9,14 +9,17 @@
 
   @media (max-width: variables.$tablet) {
     position: fixed;
+    right: -130vw;
+  }
+
+  @media (max-width: variables.$mobile) {
     width: 100%;
-    left: 130vw;
   }
 }
 
 .basketVisible {
   @media (max-width: variables.$tablet) {
-    left: 0;
+    right: 0;
     top: variables.$header-height;
     bottom: 0;
     overflow-y: auto;

@@ -38,6 +38,7 @@
     &:hover {
       transform: rotate(90deg);
     }
+
     @include mixins.backgr('../../../assets/svg/bigcross.svg');
     display: block;
     margin: auto 0 18px auto;

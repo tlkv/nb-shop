@@ -1,7 +1,7 @@
 import { useAppSelector } from 'store/hooks';
 import { useEffect, useState } from 'react';
 import getWindowSize from 'utils/windowSize';
-import { TABLET_BREAKPOINT } from 'data/constants';
+import { MOBILE_BREAKPOINT } from 'data/constants';
 import { selectBasket } from 'store/reducers/basketSlice';
 import productsMock from '../../data/productsMock';
 import ProductCard from '../../components/ProductCard/ProductCard';
@@ -26,7 +26,7 @@ const CatalogPage = () => {
 
   return (
     <section className={s.CatalogPage}>
-      {(!basket.showBasket || windowSize.innerWidth >= TABLET_BREAKPOINT) &&
+      {(!basket.showBasket || windowSize.innerWidth >= MOBILE_BREAKPOINT) &&
         productsMock.map((i) => (
           <ProductCard
             key={`product_${i.model}`}

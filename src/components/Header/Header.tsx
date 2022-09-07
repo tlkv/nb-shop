@@ -20,9 +20,9 @@ const Header = () => {
         <div className={s.headerButtons}>
           <div className={s.headerBasketContainer}>
             {basket.count > 0 && <div className={s.headerBasketCount}>{basket.count}</div>}
-            <Button label="Shopping basket" cNames={[s.headerBasket]} />
+            <Button label="Shopping basket" cNames={[s.headerBasket]} callback={basketToggle} />
           </div>
-          <Button label="burger" cNames={[s.headerBurger]} callback={basketToggle} />
+          <Button label="burger" cNames={[s.headerBurger]} />
         </div>
       </nav>
     </header>
