@@ -1,0 +1,27 @@
+@use '../../styles/variables.scss';
+
+.basket {
+  width: 410px;
+  border-left: 1px solid #cfcfcf;
+  min-height: calc(100vh - variables.$header-height);
+  transition: all 0.6s;
+  background: #fff;
+
+  @media (max-width: variables.$tablet) {
+    position: fixed;
+    right: -130vw;
+  }
+
+  @media (max-width: variables.$mobile) {
+    width: 100%;
+  }
+}
+
+.basketVisible {
+  @media (max-width: variables.$tablet) {
+    right: 0;
+    top: variables.$header-height;
+    bottom: 0;
+    overflow-y: auto;
+  }
+}

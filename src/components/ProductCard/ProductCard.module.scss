@@ -1,0 +1,45 @@
+@use '../../styles/variables.scss';
+@use '../../styles/mixins.scss';
+
+.productCard {
+  width: 250px;
+  height: 300px;
+  border: 1px solid variables.$gray-custom;
+  padding: 15px;
+
+  .productCardTitle {
+    max-width: 180px;
+    margin-top: 35px;
+    height: 2.4em;
+    font-weight: bold;
+    display: block;
+    text-decoration: none;
+    color: #000;
+    margin-bottom: 10px;
+  }
+
+  .productImageWrapper {
+    display: block;
+
+    .productCardImage {
+      max-width: 228px;
+      max-height: 130px;
+      margin-top: 15px;
+    }
+  }
+
+  .productCardPrice {
+    display: flex;
+    align-items: center;
+
+    .productCardSign {
+      margin: 0 5px 0 15px;
+    }
+
+    .productCardButton {
+      @include mixins.button;
+      @include mixins.backgr('../../assets/svg/add_to_basket.svg');
+      @include mixins.shadow;
+    }
+  }
+}

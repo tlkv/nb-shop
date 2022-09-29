@@ -1,29 +1,12 @@
-import React from 'react';
-import logo from './assets/svg/logo.svg';
-import './sass/App.scss';
-import './sass/normalize.scss';
+import Layout from './components/Layout/Layout';
+import RoutesWrapper from './utils/RoutesWrapper';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <i className="fa-solid fa-check" />
-          Edit <code>src/App.tsx</code> and save to reload.
-          <i className="fa-solid fa-check" />
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <RoutesWrapper />
+    </Layout>
   );
-}
+};
 
 export default App;

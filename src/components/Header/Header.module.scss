@@ -1,0 +1,89 @@
+@use '../../styles/variables.scss';
+@use '../../styles/mixins.scss';
+
+.header {
+  height: variables.$header-height;
+  background-color: #fff;
+  border-bottom: 1px solid #cfcfcf;
+  position: fixed;
+  width: 100%;
+
+  .siteLogo {
+    width: 89px;
+    height: 32px;
+  }
+
+  .navbar {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    max-width: variables.$container-width;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 30px;
+    height: 100%;
+    @media (max-width: variables.$mobile) {
+      padding: 0 20px;
+    }
+  }
+
+  .headerItem {
+    display: block;
+    max-height: 32px;
+  }
+
+  .headerBurger {
+    width: 31px;
+    height: 24px;
+    display: none;
+    margin-left: 26px;
+    @media (max-width: variables.$mobile) {
+      margin-left: 15px;
+    }
+    @include mixins.backgr('../../assets/svg/burger.svg');
+
+    @media (max-width: variables.$tablet) and (min-width: variables.$mobile) {
+      display: block;
+    }
+  }
+
+  .headerButtons {
+    display: flex;
+    align-items: center;
+  }
+
+  .headerBasketContainer {
+    width: 30px;
+    height: 27px;
+    position: relative;
+
+    @media (max-width: variables.$mobile) {
+      right: 10px;
+    }
+
+    .headerBasket {
+      height: 22px;
+      width: 25px;
+      margin-top: 4px;
+      @include mixins.backgr('../../assets/svg/shopping_basket.svg');
+    }
+
+    .headerBasketCount {
+      position: absolute;
+      right: 16px;
+      z-index: 1;
+      background: variables.$blue-custom;
+      min-width: 13px;
+      height: 13px;
+      border-radius: 13px;
+      font-size: 10px;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      right: 0;
+      top: 0;
+      padding: 2px;
+    }
+  }
+}

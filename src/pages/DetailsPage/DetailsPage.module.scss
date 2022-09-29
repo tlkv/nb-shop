@@ -1,0 +1,67 @@
+@use '../../styles/variables.scss';
+@use '../../styles/mixins.scss';
+
+.DetailsPage {
+  margin: 30px 170px 10px 170px;
+  width: 100%;
+  max-width: 890px;
+
+  @media (max-width: variables.$hd) {
+    margin: 30px 110px 10px 110px;
+  }
+
+  @media (max-width: variables.$tablet) {
+    margin: 30px 100px 10px 100px;
+  }
+
+  @media (max-width: variables.$mobile) {
+    margin: 30px 40px 10px 40px;
+  }
+
+  .backToMain {
+    background-color: variables.$blue-custom;
+    height: 40px;
+    width: 156px;
+    color: #fff;
+    border-radius: 3px;
+    @include mixins.shadow;
+  }
+
+  .notFound {
+    text-align: center;
+  }
+
+  .DetailsPageTitle {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    margin: 15px 0 5px;
+  }
+
+  .productImgWrapper {
+    max-width: 890px;
+    border: 1px solid #d5d5d5;
+    margin-top: 20px;
+    .productImgBig {
+      max-width: 100%;
+    }
+  }
+
+  .productPrice {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+
+    .productButton {
+      @include mixins.button;
+      @include mixins.backgr('../../assets/svg/add_to_basket.svg');
+      @include mixins.shadow;
+    }
+
+    .productSign {
+      margin: 0 5px 0 15px;
+      font-size: 24px;
+    }
+  }
+}
