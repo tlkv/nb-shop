@@ -1,8 +1,0 @@
-@use '../../styles/variables.scss';
-
-.mainContainer {
-  padding-top: variables.$header-height;
-  margin: 0 auto;
-  max-width: variables.$container-width;
-  display: flex;
-}

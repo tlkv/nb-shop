@@ -17,8 +17,6 @@
     }
   },
   "rules": {
-    "no-param-reassign": "off",
-    "consistent-return": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "comma-dangle": ["error", "only-multiline"],
@@ -34,14 +32,7 @@
     "@typescript-eslint/no-var-requires": "off",
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
-    "react/function-component-definition": [
-      2,
-      {
-        "namedComponents": "arrow-function",
-        "unnamedComponents": "arrow-function"
-      }
-    ],
-    /* disable conflicting airbnb rules */
+    /*disable conflicting airbnb rules - not in task requirements*/
     "react/jsx-filename-extension": "off",
     "import/extensions": "off",
     "import/no-unresolved": "off"
